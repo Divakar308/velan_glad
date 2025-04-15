@@ -1,0 +1,213 @@
+#parent {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  margin-bottom: 25px;
+}
+
+#logoutbutton {
+  float: right;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#internshipHomeBody {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+#internshipHomeBody.blur {
+  filter: blur(2px);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.greenButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+#searchBox {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchBox:focus {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+.internship-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.internship-table th,
+.internship-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.internship-table th {
+  background-color: #3276a6;
+  color: white;
+}
+
+#sortButtonsone {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#sortButtonstwo {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 5px;
+}
+
+button:first-of-type {
+  background-color: #25902a; /* Green background */
+  color: white; /* White text */
+}
+
+button:first-of-type:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#deleteButton {
+  background-color: #cc2b1f; /* Red background */
+  color: white; /* White text */
+}
+
+#deleteButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 2;
+}
+
+.delete-popup p {
+  margin-bottom: 20px;
+}
+
+.delete-popup button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.delete-popup button:first-child {
+  background-color: #dc3545; /* Red background */
+  color: white; /* White text */
+}
+
+.delete-popup button:first-child:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.delete-popup button:last-child {
+  background-color: #6c757d; /* Gray background */
+  color: white; /* White text */
+}
+
+.delete-popup button:last-child:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}
+
+#prevButton,
+#nextButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 2px;
+  cursor: pointer;
+}
+
+#prevButton[disabled],
+#nextButton[disabled] {
+  background-color: #ccc; /* Gray */
+  color: #888;
+  cursor: not-allowed;
+}
+
+span {
+  margin: 0 10px;
+  font-size: 15px;
+}
+
+#delete-btn{
+  background-color: #eb192e;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #3276a6;
+  color: #3276a6;
+  overflow: visible;
+  text-align: center;
+  height: 8px;
+  margin-bottom: 2%;
+}
+
+.error {
+  color: #ff0000; /* Red color for the text */
+  background-color: #ffe6e6; /* Light red background */
+  border: 1px solid #ff0000; /* Red border */
+  padding: 10px; /* Space between the border and the text */
+  margin-top: 10px; /* Space above the error message */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 10px;
+  font-weight: bold; /* Bold text */
+  width: fit-content; /* Width just enough for the content */
+}

@@ -1,0 +1,83 @@
+/* registration.component.css */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 35%;
+    margin-top : 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #333; /* Dark gray color for the heading */
+  }
+
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333; /* Dark gray color for labels */
+  }
+
+  input, select {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .error-message {
+    color: #ff0000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50; /* Green color for the button */
+    color: #fff; /* White text color for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  /* Adjustments for small screens */
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 80%;
+    }
+  }
+
+  .validation{
+    display: flex;
+  }
+
+  label{
+    color: black !important;
+  }
+
+  .asterisk{
+    color:red;
+  }

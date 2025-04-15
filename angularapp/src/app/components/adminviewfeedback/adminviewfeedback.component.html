@@ -1,0 +1,46 @@
+<div id="viewfeedback" [ngClass]="{ blur: showProfilePopup }">
+  <div class="main-head">
+    <h1>Feedback Details</h1>
+  </div>
+  <hr>
+
+  <div class="table-responsive">
+    <ng-container *ngIf="feedbacks.length > 0; else noRecordsFound">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="column-review-id">S.No</th>
+            <th class="column-user-id">User Name</th>
+            <th class="column-subject">Feedback</th>
+            <th class="column-date">Posted Date</th>
+            <th class="column-action">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feedback of feedbacks; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ feedback.User.Username }}</td>
+            <td>{{ feedback.FeedbackText }}</td>
+            <td>{{ feedback.Date | date : "dd/MM/yyyy" }}</td>
+            <td>
+              <button class="button" (click)="showProfile(feedback.User)">Show Profile</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+    <ng-template #noRecordsFound>
+      <p class="records">No data found</p>
+    </ng-template>
+  </div>
+</div>
+
+  <div *ngIf="showProfilePopup" class="profile-popup">
+    <p>User Details:</p>
+    <p>Email: {{ selectedUser.Email }}</p>
+    <p>Username: {{ selectedUser.Username }}</p>
+    <p>Mobile Number: {{ selectedUser.MobileNumber }}</p>
+    <button (click)="closeProfilePopup()">Close</button>
+  </div>
+

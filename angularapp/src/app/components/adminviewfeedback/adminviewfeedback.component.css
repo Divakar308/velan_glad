@@ -1,0 +1,114 @@
+#viewfeedback {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.main-head {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #3276a6;
+  color: #3276a6;
+  overflow: visible;
+  text-align: center;
+  height: 8px;
+  margin-bottom: 2%;
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.table th {
+  background-color: #3276a6;
+  color: white;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.profile-popup {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 1000;
+}
+
+.profile-popup p {
+  margin-bottom: 10px;
+}
+
+.profile-popup button {
+  padding: 10px 20px;
+  background-color: #cc3131;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-popup button:hover {
+  background-color: #b91010;
+}
+
+.records {
+  text-align: center;
+  font-size: 20px;
+  color: #999;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #2da6e3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #077fbb;
+}

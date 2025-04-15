@@ -1,0 +1,73 @@
+<div id="parent">
+  <div id="internshipHomeBody" [ngClass]="{ blur: showDeletePopup }">
+    <h1>Internship Listings</h1>
+    <hr>
+    <div class="top-container">
+      <input
+        id="searchBox"
+        type="text"
+        placeholder="Search by CompanyName or Location."
+        [(ngModel)]="searchField"
+        (ngModelChange)="handleSearchChange($event)"
+      />
+    </div>
+
+    <table class="internship-table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Title</th>
+          <th>Company Name</th>
+          <th>Location</th>
+          <th>Duration (Months)</th>
+          <th>Stipend</th>
+          <th>Skills Required</th>
+          <th>Application Deadline</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="status === 'loading'">
+        <tr>
+          <td colspan="10">Loading...</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="status === 'error'">
+        <tr>
+          <td colspan="10">Error loading data</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="availableInternships.length > 0; else noRecords">
+        <tr *ngFor="let internship of availableInternships; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ internship.Title }}</td>
+          <td>{{ internship.CompanyName }}</td>
+          <td>{{ internship.Location }}</td>
+          <td>{{ internship.DurationInMonths }}</td>
+          <td>₹{{ internship.Stipend }}</td>
+          <td>{{ internship.SkillsRequired }}</td>
+          <td>{{ internship.ApplicationDeadline }}</td>
+          <td>{{ internship.Description }}</td>
+          <td>
+            <button (click)="navigateToEditInternship(internship.InternshipId)">Edit</button>
+            <button (click)="handleDeleteClick(internship.InternshipId)" id="deleteButton">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <ng-template #noRecords>
+        <tr>
+          <td colspan="10" class="no-records-cell">Oops! No records found</td>
+        </tr>
+      </ng-template>
+    </table>
+  </div>
+
+  <div *ngIf="showDeletePopup" class="delete-popup">
+    <p>Are you sure you want to delete?</p>
+    <button (click)="handleConfirmDelete()" id="delete-btn">Yes, Delete</button>
+    <button (click)="closeDeletePopup()">Cancel</button>
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+</div>

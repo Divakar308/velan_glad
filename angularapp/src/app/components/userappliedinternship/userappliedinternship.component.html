@@ -1,0 +1,84 @@
+<!-- applied-internships.component.html -->
+<div class="page-content" [ngClass]="{ blur: showDeletePopup }">
+
+  <h1>Applied Internships</h1>
+  <hr>
+
+  <!-- Search Box -->
+  <input
+    id="searchBox"
+    type="text"
+    placeholder="Search by CompanyName..."
+    [(ngModel)]="searchValue"
+    (input)="filterInternships()"
+  />
+
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Company Name</th>
+        <th>Resume</th>
+        <th>Application Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredInternships.length > 0; else noRecords">
+      <tr *ngFor="let internship of filteredInternships; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ internship.Internship.CompanyName }}</td>
+        <!-- <td>
+        <img [src]="internship.Resume" width="100" height="100" ><img>
+        </td> -->
+
+        <td>
+          <!-- Button to trigger Resume Popup -->
+          <button (click)="viewResume(internship.Resume)">View Resume</button>
+        </td>
+        
+        <td>{{ internship.ApplicationDate | date : "yyyy-MM-dd" }}</td>
+        <td>
+          {{
+            internship.ApplicationStatus === 'Pending'
+              ? 'Pending'
+              : internship.ApplicationStatus === 'Approved'
+              ? 'Approved'
+              : 'Rejected'
+          }}
+        </td>        
+        <td>
+          <button id="redButton" (click)="handleDeleteClick(internship)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <ng-template #noRecords>
+      <tr>
+        <td colspan="5" class="no-records-cell">Oops! No records Found</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>
+
+
+<div *ngIf="showResumeModal" class="resume-modal">
+  <div class="resume-modal-content">
+    <span class="close-btn" (click)="closeResumeModal()">×</span>
+    <div class="resume-content">
+      <img [src]="resumeSrc" alt="Resume" width="100%" height="100%" />
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showDeletePopup" class="delete-popup">
+  <p>Are you sure you want to delete?</p>
+  <button class="confirm-delete-button" (click)="handleConfirmDelete()">
+    Yes, Delete
+  </button>
+  <button class="cancel-delete-button" (click)="closeDeletePopup()">
+    Cancel
+  </button>
+</div>

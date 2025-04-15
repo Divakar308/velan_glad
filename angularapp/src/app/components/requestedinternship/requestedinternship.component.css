@@ -1,0 +1,416 @@
+.page-content {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.page-content.blur {
+  filter: blur(2px);
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Dark overlay with slight transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Soft shadow for elegance */
+  position: relative;
+  animation: slideIn 0.3s ease-out; /* Smooth slide-in animation */
+}
+
+/* Close Button */
+#cross {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#cross:hover {
+  color: red;
+}
+
+/* Address Details */
+.address-details {
+  margin-top: 20px;
+}
+
+.address-details b {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.address-details div {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Image Styling */
+.address-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.address-details img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Animation for the modal */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+#backButton {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submissionDate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* #searchBox {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 20px;
+} */
+
+
+#searchBox {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchBox:focus {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+#filter {
+  display: block;
+  margin-right: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #3276a6;
+  color: white;
+  padding: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #3276a6;
+  color: #3276a6;
+  overflow: visible;
+  text-align: center;
+  height: 8px;
+  margin-bottom: 2%;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 5px;
+}
+
+#greenButton {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+}
+
+#greenButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#redButton {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+}
+
+#redButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+button:not(#greenButton):not(#redButton):not(#cross) {
+  background-color: #008cba; /* Blue background */
+  color: white; /* White text */
+}
+
+button:not(#greenButton):not(#redButton):not(#cross) {
+  background-color: #007b9a; /* Darker blue on hover */
+}
+
+#sortButtonsone {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#sortButtonstwo {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#filter select {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#redButton {
+  padding: 10px 20px;
+  background-color: #dc3545; /* Red background */
+  color: white; /* White text */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#redButton:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  width: 60%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for a 3D effect */
+  transition: all 0.3s ease; /* Smooth transition for any changes */
+}
+
+
+#cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* Increase the font size for better visibility */
+  transition: background-color 0.3s ease;
+  border-radius: 50%; /* Make the button round */
+  width: 30px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  text-align: center; /* Center the "X" */
+  line-height: 30px;
+  display: flex; /* Use flexbox... */
+  justify-content: center; /* ...to center the "X" horizontally... */
+  align-items: center; /* Vertically center the "X" */
+}
+
+#cross:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.address-details {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.address-details img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pagination-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 28px;
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc; /* Gray background */
+  color: #888; /* Dark gray text */
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+span{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/* Resume Modal Styling */
+.resume-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.resume-modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px; /* Adjust max width to keep the modal size in check */
+  height: 80%; /* Set height limit */
+  max-height: 80%; /* Ensure modal doesn’t grow too large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.resume-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.resume-content img {
+  max-width: 60%;  /* Make the image take 60% of the width */
+  max-height: 80%; /* Limit the height to 80% of the modal */
+  object-fit: contain; /* Maintain aspect ratio without stretching */
+}
+
+/* Blur Effect When Popup is Active */
+.blur {
+  filter: blur(5px);
+}
+/* 
+.chart
+{
+  align-items: end;
+} */
+

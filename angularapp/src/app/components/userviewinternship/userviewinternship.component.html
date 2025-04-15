@@ -1,0 +1,68 @@
+<div>
+  <div id="internshipHomeBody">
+    <h1>Available Internship Opportunities</h1>
+    <hr>
+
+    <!-- Search Box -->
+    <div class="top-container">
+      <input
+        id="searchBox"
+        type="text"
+        placeholder="Search by CompanyName or Location.."
+        [(ngModel)]="searchField"
+        (ngModelChange)="handleSearchChange($event)"
+      />
+    </div>
+
+    <!-- Available Internships Table -->
+    <table class="internship-table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Internship Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Duration (Months)</th>
+          <th>Stipend</th>
+          <th>Skills Required</th>
+          <th>Application Deadline</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="filteredInternships.length; else noRecords">
+        <tr *ngFor="let internship of filteredInternships; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ internship.Title }}</td>
+          <td>{{ internship.CompanyName }}</td>
+          <td>{{ internship.Location }}</td>
+          <td>{{ internship.DurationInMonths }}</td>
+          <td>₹{{ internship.Stipend }}</td>
+          <td>{{ internship.SkillsRequired }}</td>
+          <td>{{ internship.ApplicationDeadline }}</td>
+          <td>
+            <button
+              id="applyButton"
+              *ngIf="!isInternshipApplied(internship) && !isDeadlineExceeded(internship)"
+              (click)="handleApplyClick(internship)"
+            >
+              Apply
+            </button>
+
+            <button id="appliedButton" *ngIf="isInternshipApplied(internship)">Applied</button>
+
+            <button id="expiredButton" *ngIf="isDeadlineExceeded(internship)" disabled>
+              Expired
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <ng-template #noRecords>
+        <tbody>
+          <tr>
+            <td colSpan="9" class="no-records-cell">Oops! No internships found</td>
+          </tr>
+        </tbody>
+      </ng-template>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,262 @@
+.page-content {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.page-content.blur {
+  filter: blur(2px);
+}
+
+#backButton {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+#searchBox {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchBox:focus {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #3276a6;
+  color: white;
+}
+
+#sortButtonsone {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#sortButtonstwo {
+  background-color: #fff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #3276a6;
+  color: #3276a6;
+  overflow: visible;
+  text-align: center;
+  height: 8px;
+  margin-bottom: 2%;
+}
+
+#redButton {
+  background-color: #dc3545; /* Red background */
+  color: white; /* White text */
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 15px;
+  padding: 10px;
+  transition: background-color 0.3s;
+  border-radius: 7px;
+  width: 100px;
+}
+
+#redButton:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.pagination-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 28px;
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc; /* Gray background */
+  color: #888; /* Dark gray text */
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+button {
+  background-color: #0c3c95; /* Blue for View Resume */
+  color: white;
+}
+
+button:hover {
+  background-color: #0a3270;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.delete-popup {
+  position: fixed;
+  background-color: #e6dfdf;
+  padding: 30px;
+  left: 40%;
+  bottom: 35%;
+  border-radius: 7px;
+}
+
+.confirm-delete-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: #dc3545; /* Red background */
+  color: white; /* White text */
+  transition: background-color 0.3s;
+  border-radius: 6px;
+}
+
+.confirm-delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.cancel-delete-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: #6c757d; /* Gray background */
+  color: white; /* White text */
+  transition: background-color 0.3s;
+  border-radius: 6px;
+}
+
+.cancel-delete-button:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}
+
+span {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+p{
+  font-size: 17px;
+}
+
+
+
+/* Resume Modal Styling */
+.resume-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.resume-modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px; /* Adjust max width to keep the modal size in check */
+  height: 80%; /* Set height limit */
+  max-height: 80%; /* Ensure modal doesn’t grow too large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.resume-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.resume-content img {
+  max-width: 60%;  /* Make the image take 60% of the width */
+  max-height: 80%; /* Limit the height to 80% of the modal */
+  object-fit: contain; /* Maintain aspect ratio without stretching */
+}
+
+/* Blur Effect When Popup is Active */
+.blur {
+  filter: blur(5px);
+}
+

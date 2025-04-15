@@ -1,0 +1,100 @@
+<div class="page-content" [ngClass]="{ blur: showModal }">
+  <h1>Internship Applications for Approval</h1>
+  <hr>
+  <div class="top-container">
+    <input
+      id="searchBox"
+      type="text"
+      placeholder="Search by Degree Program..."
+      [(ngModel)]="searchValue"
+      (input)="handleSearchChange($event)"
+    />
+    <label id="filter">
+      Filter by Status:
+      <select [(ngModel)]="statusFilter" (change)="handleFilterChange($event)">
+        <option value="All">All</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </label>
+  </div>
+
+  <!-- Internship Applications Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Username</th>
+        <th>University Name</th>
+        <th>Degree Program</th>
+        <th>Application Date</th>
+        <th>LinkedIn Profile</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredInternships.length > 0; else noRecords">
+      <tr *ngFor="let application of filteredInternships; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ application.User.Username }}</td>
+        <td>{{ application.UniversityName }}</td>
+        <td>{{ application.DegreeProgram }}</td>
+        <td>{{ application.ApplicationDate | date: 'yyyy-MM-dd' }}</td>
+        <td>
+          <a *ngIf="application.LinkedInProfile" [href]="application.LinkedInProfile" target="_blank">View Profile</a>
+          <span *ngIf="!application.LinkedInProfile">N/A</span>
+        </td>
+        <td>{{ application.ApplicationStatus }}</td>
+        <td>
+          <!-- <button (click)="handleRowExpand(i)">Show More</button> -->
+          <button
+            id="greenButton"
+            *ngIf="application.ApplicationStatus === 'Pending' || application.ApplicationStatus === 'Rejected'"
+            (click)="handleApprove(application)"
+          >
+            Approve
+          </button>
+          <button
+            id="redButton"
+            *ngIf="application.ApplicationStatus === 'Pending' || application.ApplicationStatus === 'Approved'"
+            (click)="handleReject(application)"
+          >
+            Reject
+          </button>
+          <button (click)="viewResume(application.Resume)">View Resume</button>
+        </td>
+     </tr>
+    </tbody>
+
+    <button  class="chart" (click)="navigateToChart()">View Degree Program Chart</button>
+
+    <ng-template #noRecords>
+      <tr>
+        <td colspan="8" class="no-records-cell">Oops! No records found</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>
+
+<!-- Modal for expanded application details -->
+<!-- <div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-content">
+    <button id="cross" (click)="closeInternshipDetailsModal()">X</button>
+    <div class="details-section">
+      <div><b>Application Date:</b> {{ selectedInternship?.ApplicationDate | date: 'yyyy-MM-dd' }}</div>
+      <div><b>University Name:</b> {{ selectedInternship?.UniversityName }}</div>
+      <div><b>Degree Program:</b> {{ selectedInternship?.DegreeProgram }}</div>
+    </div>
+  </div>
+</div> -->
+
+
+<div *ngIf="showResumeModal" class="resume-modal">
+  <div class="resume-modal-content">
+    <span class="close-btn" (click)="closeResumeModal()">×</span>
+    <div class="resume-content">
+      <img [src]="resumeSrc" alt="Resume" width="100%" height="100%" />
+    </div>
+  </div>
+</div>

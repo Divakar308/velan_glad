@@ -1,0 +1,52 @@
+<div>
+  <div class="container" [ngClass]="{ blur: successPopup }">
+    <div class="button-container">
+      <button (click)="navigateBack()">Back</button>
+    </div>
+    <h2>Internship Application Form</h2>
+
+    <form [formGroup]="internshipForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="universityName">University Name<span class="required">*</span></label>
+        <input id="universityName" type="text" formControlName="universityName" />
+        <div *ngIf="internshipForm.controls['universityName']?.touched && internshipForm.controls['universityName'].hasError('required')" class="error">
+          *University Name is required
+        </div>
+      </div>
+
+      <div>
+        <label for="degreeProgram">Degree Program<span class="required">*</span></label>
+        <input id="degreeProgram" type="text" formControlName="degreeProgram" />
+        <div *ngIf="internshipForm.controls['degreeProgram']?.touched && internshipForm.controls['degreeProgram'].hasError('required')" class="error">
+          *Degree Program is required
+        </div>
+      </div>
+
+      <div>
+        <label for="linkedInProfile">LinkedIn Profile (Optional)</label>
+        <input id="linkedInProfile" type="url" />
+      </div>
+
+      <div>
+        <label for="resume">Resume<span class="required">*</span></label>
+        <input id="resume" type="file" (change)="handleFileChange($event)" accept=".jpg, .jpeg, .png, .pdf"/>
+        <div *ngIf="internshipForm.controls['resume']?.touched && internshipForm.controls['resume'].hasError('required')" class="error">
+          *Resume is required
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error">
+        *{{ errorMessage }}
+      </div>
+
+      <div>
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="successPopup" class="success-popup">
+    <p>Successfully Submitted!</p>
+    <button (click)="handleSuccessMessage()">Ok</button>
+  </div>
+</div>

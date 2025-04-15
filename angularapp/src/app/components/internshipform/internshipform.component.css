@@ -1,0 +1,128 @@
+/* loan-application-form.component.css */
+
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #edebeba4;
+}
+
+.button-container {
+  position: absolute; /* Add this line */
+  top: 20px; /* Adjust as needed */
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.required {
+  color: red;
+}
+
+button {
+  padding: 5px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 95%;
+  padding: 8px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.submit-button {
+  background-color: #2ecc71;
+  color: #fff;
+  margin-top: 10px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group .error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  border-radius: 5px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.success-popup p {
+  margin: 0;
+  color: #3c763d;
+}
+
+.success-popup button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #5cb85c;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.blur {
+  filter: blur(4px); /* Add a blur effect when success popup is displayed */
+}
+
+h2 {
+  text-align: center;
+}

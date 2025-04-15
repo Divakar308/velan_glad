@@ -1,0 +1,118 @@
+<div class="internship-form-container" [class.blur]="successPopup">
+  <button type="button" id="backButton" (click)="navigateToDashboard()">Back</button>
+  <h2>Edit Internship</h2>
+  <hr>
+  <form #internshipForm="ngForm" (ngSubmit)="handleUpdateInternship(internshipForm)">
+    <label for="Title">Internship Title<span class="required">*</span></label>
+    <input
+      id="Title"
+      type="text"
+      name="Title"
+      [(ngModel)]="formData.Title"
+      placeholder="Internship Title"
+      required
+      #Title="ngModel"
+      (change)="handleChange($event, 'Title')"
+    />
+    <div class="error" *ngIf="Title.invalid && Title.touched">*Internship Title is required</div>
+
+    <label for="CompanyName">Company Name<span class="required">*</span></label>
+    <input
+      id="CompanyName"
+      type="text"
+      name="CompanyName"
+      [(ngModel)]="formData.CompanyName"
+      placeholder="Company Name"
+      required
+      #CompanyName="ngModel"
+      (change)="handleChange($event, 'CompanyName')"
+    />
+    <div class="error" *ngIf="CompanyName.invalid && CompanyName.touched">*Company Name is required</div>
+
+    <label for="Location">Location<span class="required">*</span></label>
+    <input
+      id="Location"
+      type="text"
+      name="Location"
+      [(ngModel)]="formData.Location"
+      placeholder="Location (e.g., Remote, New York)"
+      required
+      #Location="ngModel"
+      (change)="handleChange($event, 'Location')"
+    />
+    <div class="error" *ngIf="Location.invalid && Location.touched">*Location is required</div>
+
+    <label for="DurationInMonths">Duration (Months)<span class="required">*</span></label>
+    <input
+      id="DurationInMonths"
+      type="number"
+      name="DurationInMonths"
+      [(ngModel)]="formData.DurationInMonths"
+      placeholder="Internship Duration"
+      required
+      #DurationInMonths="ngModel"
+      (change)="handleChange($event, 'DurationInMonths')"
+    />
+    <div class="error" *ngIf="DurationInMonths.invalid && DurationInMonths.touched">*Duration is required</div>
+
+    <label for="Stipend">Stipend<span class="required">*</span></label>
+    <input
+      id="Stipend"
+      type="number"
+      name="Stipend"
+      [(ngModel)]="formData.Stipend"
+      placeholder="Monthly Stipend"
+      required
+      #Stipend="ngModel"
+      (change)="handleChange($event, 'Stipend')"
+    />
+    <div class="error" *ngIf="Stipend.invalid && Stipend.touched">*Stipend is required</div>
+
+    <label for="Description">Description<span class="required">*</span></label>
+    <textarea
+      id="Description"
+      name="Description"
+      [(ngModel)]="formData.Description"
+      placeholder="Internship Role and Responsibilities"
+      required
+      #Description="ngModel"
+      (change)="handleChange($event, 'Description')"
+    ></textarea>
+    <div class="error" *ngIf="Description.invalid && Description.touched">*Description is required</div>
+
+    <label for="SkillsRequired">Skills Required<span class="required">*</span></label>
+    <input
+      id="SkillsRequired"
+      type="text"
+      name="SkillsRequired"
+      [(ngModel)]="formData.SkillsRequired"
+      placeholder="Required Skills (e.g., C#, .NET, React)"
+      required
+      #SkillsRequired="ngModel"
+      (change)="handleChange($event, 'SkillsRequired')"
+    />
+    <div class="error" *ngIf="SkillsRequired.invalid && SkillsRequired.touched">*Skills Required is required</div>
+
+    <label for="ApplicationDeadline">Application Deadline<span class="required">*</span></label>
+    <input
+      id="ApplicationDeadline"
+      type="date"
+      name="ApplicationDeadline"
+      [(ngModel)]="formData.ApplicationDeadline"
+      required
+      #ApplicationDeadline="ngModel"
+      (change)="handleChange($event, 'ApplicationDeadline')"
+      [min]="minDate"
+    />
+    <div class="error" *ngIf="ApplicationDeadline.invalid && ApplicationDeadline.touched">*Application Deadline is required</div>
+
+    <div *ngIf="errorMessage" class="error">*{{ errorMessage }}</div>
+
+    <button type="submit">Update Internship</button>
+  </form>
+</div>
+
+<div class="success-popup" *ngIf="successPopup">
+  <p>Updated successfully</p>
+  <button type="button" (click)="handleOkClick()">OK</button>
+</div>

@@ -1,0 +1,16 @@
+<nav>
+  <ul class="nav-links">
+    <ng-container *ngIf="isLoggedIn">
+      <li><a routerLink="/user/view/viewinternship" *ngIf="isCustomer">Internships</a></li>
+      <li><a routerLink="/user/view/appliedinternship" *ngIf="isCustomer">Applied Internship</a></li>
+      <li *ngIf="isCustomer">
+        <a routerLinkActive="active">Feedback</a>
+        <ul class="sub-menu">
+          <li><a routerLink="/user/add/feedback">Post Feedback</a></li>
+          <li><a routerLink="/user/view/feedback">My Feedbacks</a></li>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+

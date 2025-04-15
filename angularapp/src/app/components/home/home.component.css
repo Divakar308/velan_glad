@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  height: 70vh; /* Increased height for better spacing */
+  padding: 30px; /* Adjusted padding for more room */
+  background-color: #f4f4f9; /* Soft background color for a clean look */
+  border-radius: 12px; /* Slightly larger border radius */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50; /* Darker color for better contrast */
+  font-size: 3em; /* Increased font size for the heading */
+  margin-bottom: 20px;
+  text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+p {
+  text-align: center;
+  max-width: 800px; /* Slightly reduced max-width for better readability */
+  font-size: 18px; /* Adjusted font size for readability */
+  line-height: 1.6; /* Increased line height for better readability */
+  color: #34495e; /* Darker text color for improved contrast */
+  margin-top: 20px; /* Added margin to separate text from the heading */
+}

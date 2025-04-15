@@ -1,0 +1,32 @@
+<nav>
+  <h1 class="site-title">INTERNSHIP APPLICATION SYSTEM</h1>
+  <ul class="nav-links">
+    <ng-container *ngIf="!isLoggedIn">
+      <li><a routerLink="/signup">Register</a></li>
+      <li><a routerLink="/login">Login</a></li>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn">
+      <li><p class="user-role"> {{ userName}} / {{ userRole }}</p></li>
+      <li><a routerLink="/">Home</a></li>
+       <li>
+        <app-adminnav></app-adminnav>
+      </li>
+      <li><app-usernav></app-usernav></li>
+      <li>
+        <button class="button button-logout" (click)="showLogoutPopup = true">
+          Logout
+        </button>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+
+<div *ngIf="showLogoutPopup" class="logout-popup">
+  <div class="logout-popup-content">
+    <p>Are you sure you want to logout?</p>
+    <button (click)="logout(); showLogoutPopup = false" id="logout-btn" class="button button-yes">
+      Yes, Logout
+    </button>
+    <button (click)="showLogoutPopup = false" class="button button-cancel">Cancel</button>
+  </div>
+</div>

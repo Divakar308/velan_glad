@@ -1,0 +1,65 @@
+/* Style for the main navigation */
+nav {
+  font-family: Arial, sans-serif;
+}
+
+ul.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+ul.nav-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+ul.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+
+}
+
+ul.nav-links a:hover {
+  background-color: #ddd;
+  color:#000;
+}
+
+/* Style for the sub-menu */
+ul.sub-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  list-style-type: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+ul.sub-menu li {
+  display: block;
+  list-style-type: none;
+}
+
+ul.sub-menu a {
+  padding: 10px;
+  display: block;
+  color: #333;
+}
+
+ul.sub-menu a:hover {
+  background-color: #ddd;
+}
+
+/* Show sub-menu on hover */
+ul.nav-links li:hover > ul.sub-menu {
+  display: block;
+}
+
+/* Add styling for the active link */
+ul.nav-links a.active {
+  background-color: #ddd;
+}
