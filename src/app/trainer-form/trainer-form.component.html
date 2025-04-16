@@ -1,0 +1,28 @@
+<form (ngSubmit)="addTrainer()">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="newTrainer.name" name="name" required>
+        <div *ngIf="formSubmitted && !newTrainer.name" class="error-message">Name is required</div>
+    </div>
+    <div>
+        <label for="specialization">Specialization:</label>
+        <input type="specialization" id="specialization" [(ngModel)]="newTrainer.specialization" name="specialization" required>
+        <div *ngIf="formSubmitted && !newTrainer.specialization" class="error-message">Specialization is required</div>
+    </div>
+    <div>
+        <label for="experienceYears">ExperienceYears:</label>
+        <input type="number" id="experienceYears" [(ngModel)]="newTrainer.experienceYears" name="experienceYears" required>
+        <div *ngIf="formSubmitted && !newTrainer.experienceYears" class="error-message">ExperienceYears is required</div>
+    </div>
+    <div>
+        <label for="sessionFee">SessionFee:</label>
+        <input type="number" id="sessionFee" [(ngModel)]="newTrainer.sessionFee" name="sessionFee" required>
+        <div *ngIf="formSubmitted && !newTrainer.sessionFee" class="error-message">SessionFee is required</div>
+    </div>
+    <div>
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" [(ngModel)]="newTrainer.rating" name="rating" step="0.1" min="0" max="5" required>
+        <div *ngIf="formSubmitted && !newTrainer.rating" class="error-message">Rating is required</div>
+    </div>
+    <button type="submit">Add Trainer</button>
+</form>

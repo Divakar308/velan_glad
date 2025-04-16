@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Trainer List</h2>
+
+    <div *ngIf="trainers.length === 0" class="no-trainers-message">
+        No trainers available.
+    </div>
+  
+    <button (click)="sortTrainersBySessionFee()" class="sort-button">Sort by SessionFee (Descending)</button>
+
+    <table *ngIf="trainers.length > 0" class="trainer-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>ExperienceYears</th>
+                <th>SessionFee</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trainer of trainers">
+                <td>{{ trainer.name }}</td>
+                <td>{{ trainer.specialization }}</td>
+                <td>{{ trainer.experienceYears }}</td>
+                <td>{{ trainer.sessionFee }}</td>
+                <td>{{ trainer.rating }}</td>
+                <td>
+                    <button id="delete" class="delete-button" (click)="deleteTrainer(trainer.trainerId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

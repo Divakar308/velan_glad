@@ -1,0 +1,15 @@
+<div class="container" *ngIf="trainer">
+  <h2>Delete Confirmation</h2>
+  <div class="confirmation-message">
+    <p>Are you sure you want to delete this trainer?</p>
+    <p>Name: {{ trainer.name }}</p>
+    <p>Specialization: {{ trainer.specialization }}</p>
+    <p>ExperienceYears: {{ trainer.experienceYears }}</p>
+    <p>SessionFee: {{ trainer.sessionFee }}</p>
+    <p>Rating: {{ trainer.rating }}</p>
+  </div>
+  <div class="form-buttons">
+    <button type="button" class="confirm-button" (click)="confirmDelete(trainerId)">Confirm Delete</button>
+    <button type="button" class="cancel-button" (click)="cancelDelete()">Cancel</button>
+  </div>
+</div>
